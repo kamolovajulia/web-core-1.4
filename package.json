@@ -1,7 +1,7 @@
 {
-  "name": "web-last-block",
+  "name": "c",
   "version": "1.0.0",
-  "description": "",
+  "description": "- [Node 14.18.3](https://nodejs.org/download/release/v14.18.3/)\r - [NVM/MacOC](https://tecadmin.net/install-nvm-macos-with-homebrew/)\r - [NVM/Windows](https://github.com/coreybutler/nvm-windows/releases) Если Windows то установка только от имени администратора\r - [Yarn](https://yarnpkg.com/)",
   "keywords": [
     "web",
     "scss",
@@ -40,7 +40,7 @@
     "node-sass": "^4.14.1",
     "postcss-loader": "3.0.0",
     "sass-loader": "7.2.0",
-    "webpack": "4.41.2",
+    "webpack": "^4.46.0",
     "webpack-cli": "3.3.7",
     "webpack-dev-server": "^3.11.0"
   },
@@ -53,5 +53,17 @@
     "plugins": {
       "autoprefixer": {}
     }
-  }
+  },
+  "dependencies": {
+    "corepack": "^0.18.0",
+    "npm": "^9.6.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-karo/webpack-static-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alex-karo/webpack-static-template/issues"
+  },
+  "homepage": "https://github.com/alex-karo/webpack-static-template#readme"
 }
