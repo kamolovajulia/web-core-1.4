@@ -1,2 +1,10 @@
 node_modules/
 dist/
+.vscode/
+install_tools.bat
+node.exe
+readme.md
+npx.bat
+npm.bat
+nodevars.bat
+node_etw_provider.man

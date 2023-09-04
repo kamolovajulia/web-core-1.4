@@ -22,13 +22,13 @@
 .header__icon:last-child {
     margin-right: 0;
 }
-.icon_burger {
+.icon__burger {
     background-image: url('../img/burger.svg');
 }
-.icon_repair {
+.icon__repair {
     background-image: url('../img/repair.svg');
 }
-.icon_status {
+.icon__status {
     background-image: url('../img/checkstatus.svg');
 }
 .header__logo {
@@ -36,7 +36,7 @@
     height: 50.815px;
     margin-right: auto;
 }
-.icon_hidden {
+.icon--hidden {
     display: none;
 }
 .header__space {
@@ -143,7 +143,7 @@
     margin-left: auto;
     margin-right: auto;
 }
-.hidden_page_m {
+.hidden-page-m {
     display: none;
 }
 
@@ -152,16 +152,16 @@
     .body__header {
         padding: 24px;
     }
-    .icon_hidden {
+    .icon--hidden {
         display: block;
     }
-    .icon_profile {
+    .icon__profile {
         background-image: url('../img/profile.svg');
     }
-    .icon_chat{
+    .icon__chat{
         background-image: url('../img/chat.svg');
     }
-    .icon_call {
+    .icon__call {
         background-image: url('../img/call.svg');
     }
     .page {
@@ -173,7 +173,7 @@
     .page__icon {
         display: none;
     }
-    .page_info {
+    .page__info {
       margin-right: 48px;
     }
     .title-block__h1 {
@@ -234,13 +234,13 @@
     .page__title {
         display: flex;
     }
-    .page_info {
+    .page__info {
       margin-right: 36px;
     }
-    .icon_repair {
+    .icon__repair {
         background-image: url('../img/repair.svg');
     }
-    .icon_status {
+    .icon__status {
         background-image: url('../img/checkstatus.svg');
     }
     .page__t-block {
@@ -273,16 +273,16 @@
     .menu__button:last-child {
         padding-left: 22.64px;
     }
-  .active-button_page_l {
+  .active-button--page-l {
       border-radius: 6px;
       border: 2px solid #B8FFEC;
       background: #FFF;
       padding: 8.63px 21.7px 7.37px 22.64px;
   }
-  .hidden_page_m {
+  .hidden-page-m {
       display: block;
   }
-  .hidden_page_l {
+  .hidden-page-l {
       display: none;
   }
   .page__t-block {

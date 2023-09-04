@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
         };
     });
 
-    const burger = document.querySelector('.icon_burger');
-    const closeBtn = document.querySelector('.icon_close');
+    const burger = document.querySelector('.icon__burger');
+    const closeBtn = document.querySelector('.icon__close');
     const asideMenu = document.querySelector('.aside-body');
     const bodyContent = document.querySelector('.body__content');
 
@@ -120,12 +120,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
             };
         };
     });
+
     //Показать боковое меню и основной контент
     function openBodyAndMenu() {
       bodyContent.classList.remove('body__content--fixed320');
       asideContainer.classList.remove('menu-opacity0');
       asideContainer.classList.remove('body__content--fixed');
-  }
+    }
+
     //Закрытие окон обратной связи и заказа звонка
     document.addEventListener('click', function(event) {
         let id = event.target.dataset.toggleId;
@@ -156,6 +158,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     elem.dataset.attr='false';
                 }
                 bodyContent.classList.remove('body__content--opacity0');
+                bodyContent.classList.remove('body__content--fixed');
                 if (burger.dataset.open=='true') {
                     // asideMenu.classList.add('aside-body--opacity1');
                     bodyContent.classList.remove('body__content--opacity1');
