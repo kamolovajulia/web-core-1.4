@@ -1,37 +1,8 @@
-@font-face {
-    font-family: 'TT Lakes Medium';
-    src: url('../fonts/TTLakes-Medium.eot');
-    src: url('../fonts/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/TTLakes-Medium.woff') format('woff'),
-    url('../fonts/TTLakes-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'TT Lakes Regular';
-    src: url('../fonts/TTLakes-Regular.eot');
-    src: url('../fonts/TTLakes-Regular.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/TTLakes-Regular.woff') format('woff'),
-    url('../fonts/TTLakes-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'TT Lakes Bold';
-    src: url('../fonts/TTLakes-Bold.eot');
-    src: url('../fonts/TTLakes-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/TTLakes-Bold.woff') format('woff'),
-    url('../fonts/TTLakes-Bold.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 *{
     margin: 0;
 }
 .body__container{
     margin: 0 auto;
-    /* background: #F8F8F8; */
 }
 .body__header {
     display: flex;
@@ -120,7 +91,6 @@
     margin-bottom: 24px;
     margin-right: 19.56px;
     margin-left: 0;
-    /* width: 246px; */
     height: 40px;
     border-radius: 0px;
     border: 0px;
@@ -203,6 +173,9 @@
     .page__icon {
         display: none;
     }
+    .page_info {
+      margin-right: 48px;
+    }
     .title-block__h1 {
         letter-spacing: -0.6px;
         margin-left: 20px;
@@ -212,7 +185,6 @@
     }
     .menu__button {
         padding: 8px 9.38px 8px 16.67px;
-        /* padding: 0.56vw 1.23vw 0.45vw 1.34vw; */
         margin-top: 32px;
         margin-bottom: 32px;
         margin-right: 25px;
@@ -252,21 +224,18 @@
 
 @media (min-width: 1120px) {
     .body__container {
-        /* width: 1120px;
-        margin: auto; */
         background: #F8F8F8;
     }
-    .body__header {
-        /* display: none; */
-    }
     .menu {
-        /* flex-wrap: wrap; */
         justify-content: space-between;
     }
 }
 @media (min-width: 1440px) {
     .page__title {
         display: flex;
+    }
+    .page_info {
+      margin-right: 36px;
     }
     .icon_repair {
         background-image: url('../img/repair.svg');
@@ -297,53 +266,50 @@
         border: 0;
         background: #F8F8F8;
     }
-
     .menu__button {
         margin: 0;
         margin-bottom: 5px;
     }
-
     .menu__button:last-child {
         padding-left: 22.64px;
     }
-
-.active-button_page_l {
-    border-radius: 6px;
-    border: 2px solid #B8FFEC;
-    background: #FFF;
-    padding: 8.63px 21.7px 7.37px 22.64px;
-}
-.hidden_page_m {
-    display: block;
-}
-.hidden_page_l {
-    display: none;
-}
-.page__t-block {
-    margin-left: -33px;
-}
-.body__header {
-    display: none;
-}
-.page {
-    box-sizing: border-box;
-    padding: 42px 32px;
-}
-.page__icon {
-    width: 175px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    margin-right: 32px;
-    font-size: 16px;
-    color: #1B1C21;
-    font-family: 'TT Lakes Medium';
-    line-height: 24px;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-    background-size: 40px 40px;
-}
-.page__icon:last-child {
-    margin-right: 0;
-}
-}
+  .active-button_page_l {
+      border-radius: 6px;
+      border: 2px solid #B8FFEC;
+      background: #FFF;
+      padding: 8.63px 21.7px 7.37px 22.64px;
+  }
+  .hidden_page_m {
+      display: block;
+  }
+  .hidden_page_l {
+      display: none;
+  }
+  .page__t-block {
+      margin-left: -33px;
+  }
+  .body__header {
+      display: none;
+  }
+  .page {
+      box-sizing: border-box;
+      padding: 42px 32px;
+  }
+  .page__icon {
+      width: 175px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      margin-right: 32px;
+      font-size: 16px;
+      color: #1B1C21;
+      font-family: 'TT Lakes Medium';
+      line-height: 24px;
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+      background-size: 40px 40px;
+  }
+  .page__icon:last-child {
+      margin-right: 0;
+  }
+  }

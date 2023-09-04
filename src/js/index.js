@@ -1,5 +1,5 @@
 import '../scss/style.scss'
-import 'code.js'
+import '../js/code'
 export const myVariable = 'Block 7';
 
 console.log('Works!')

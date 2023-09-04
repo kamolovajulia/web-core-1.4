@@ -4,34 +4,23 @@
 .aside-body {
     opacity: 1;
     background: #FFF;
-    /* position: absolute;
-    top: 0;
-    left: 0; */
-    /* width: -webkit-fill-available;
-    height: auto; */
     display: flex;
     flex-direction: column;
 }
 .aside-container {
-    /* display: flex;
-    flex-direction: column; */
-    /* opacity: 0.9605; */
-    /* opacity: 0.04; */
-    background: transparent;
-
+    background: #FFF;
+    display: flex;
 }
 .aside-body__container {
     padding: 23px 24px 32px 24px;
     width: 320px;
     box-sizing: border-box;
-    /* height: -webkit-fill-available; */
     box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.20), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
 }
 .aside-body--opacity0 {
     display: none;
 }
 .aside-body--opacity1{
-    /* opacity: 1; */
     z-index: 99;
     opacity: 0.9605;
 }
@@ -48,18 +37,13 @@
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-     /* margin-bottom: 5vh; */
 }
 .wrapper__menu {
     list-style: none;
     padding: 0;
     margin-bottom: 240px;
-    /* margin-bottom: 20vh; */
-    /* margin-bottom: 9vh; */
 }
 .aside-menu__item {
-    /* margin-bottom: 3vh; */
-    /* margin-bottom: 32px; */
     margin-bottom: 32px;
 }
 .aside-menu__item:last-child {
@@ -99,7 +83,6 @@
     text-decoration: underline;
 }
 .icon {
-    /* width: 40px; */
     height: 40px;
     opacity: 0.9;
     transition: opacity 1.5s, transform 2s;
@@ -134,7 +117,6 @@
 .contacts__sprites {
     display: flex;
     margin-bottom: 16px;
-    /* margin-bottom: 1.5vh; */
 }
 .sprites__icon {
     margin-right: 16px;
@@ -144,7 +126,6 @@
 }
 .contacts__mailto {
     margin-bottom: 12px;
-    /* margin-bottom: 1.2vh; */
 }
 .e-mail {
     text-decoration: none;
@@ -161,7 +142,6 @@
 }
 .contacts__telephone {
     margin-bottom: 40px;
-    /* margin-bottom: 2vh; */
 }
 .phone-number {
     text-decoration: none;
@@ -197,14 +177,12 @@
         display: flex;
         height: auto;
         box-shadow: none;
-
     }
     .icon_close {
         display: none;
     }
     .wrapper {
         width: 253px;
-
     }
     .wrapper__header {
         margin-bottom: 37px;
