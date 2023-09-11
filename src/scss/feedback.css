@@ -1,6 +1,3 @@
-* {
-    margin: 0;
-}
 .hidden {
     display: none;
 }
@@ -10,8 +7,6 @@
     background: #FFF;
     padding: 24px 16px;
     box-sizing: border-box;
-    /* display: flex;
-    flex-direction: column; */
     position: absolute;
     top: 0%;
     right: 0%;
@@ -55,9 +50,6 @@
     row-gap: 16px;
 }
 .input {
-    /* width: 288px; */
-    /* height: 48px;
-    flex-shrink: 0; */
     border-radius: 8px;
     border: 1px solid #EAEAEA;
     background: #FFF;
@@ -72,6 +64,7 @@
     padding-right: 16px;
     box-sizing: border-box;
 }
+
 .input:focus {
     outline-color: #1B1C21;
 }
@@ -79,7 +72,6 @@
     outline-color: #1B1C21;
 }
 .textarea {
-    /* width: 288px; */
     height: 118px;
     flex-shrink: 0;
     border-radius: 8px;

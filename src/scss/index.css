@@ -146,23 +146,24 @@
 .hidden-page-m {
     display: none;
 }
-
+@media (min-width: 550px) {
+.icon--hidden {
+  display: block;
+}
+.icon__profile {
+  background-image: url('../img/profile.svg');
+}
+.icon__chat{
+  background-image: url('../img/chat.svg');
+}
+.icon__call {
+  background-image: url('../img/call.svg');
+}
+}
 @media (min-width: 768px) {
 
     .body__header {
         padding: 24px;
-    }
-    .icon--hidden {
-        display: block;
-    }
-    .icon__profile {
-        background-image: url('../img/profile.svg');
-    }
-    .icon__chat{
-        background-image: url('../img/chat.svg');
-    }
-    .icon__call {
-        background-image: url('../img/call.svg');
     }
     .page {
         padding: 24px 40px 14px 24px;

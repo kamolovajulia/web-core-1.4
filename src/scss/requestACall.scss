@@ -1,24 +1,51 @@
-* {
-    margin: 0;
-}
 .wrapper-request {
-  /* display: flex; */
+  background: lighten(#fff, 90%);
+  z-index: 100;
+  height: 1000px;
 }
 .request {
     width: 320px;
     box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.20), -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
     height: 100%;
-    background: #FFF;
+    background: $bgWhite;
     padding: 24px 16px;
     box-sizing: border-box;
-    /* display: flex; */
     position: absolute;
     top: 0%;
     right: 0%;
-}
-.request__header {
-    margin-bottom: 29px;
-    display: flex;
+    height: 1000px;
+
+    &__header {
+      margin-bottom: 29px;
+      display: flex;
+    }
+
+    &__title {
+      color: $text;
+      font-family: 'TT Lakes Bold';
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: -0.6px;
+      margin-bottom: 24px;
+    }
+
+    &__title::before {
+      content: "";
+      display: inline-block;
+      margin-left: -16px;
+      margin-right: 12px;
+      width: 4px;
+      height: 40px;
+      background-image: url('../img/highlight.svg');
+      background-repeat: no-repeat;
+      vertical-align: bottom;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
 }
 .icon__close {
     width: 40px;
@@ -27,34 +54,10 @@
     background-repeat: no-repeat;
     margin-right: auto;
 }
-.request__title {
-    color: #1B1C21;
-    font-family: 'TT Lakes Bold';
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: -0.6px;
-    margin-bottom: 24px;
-}
-.request__title::before {
-    content: "";
-    display: inline-block;
-    margin-left: -16px;
-    margin-right: 12px;
-    width: 4px;
-    height: 40px;
-    background-image: url('../img/highlight.svg');
-    background-repeat: no-repeat;
-    vertical-align: bottom;
-}
-.request__form {
-    display: flex;
-    flex-direction: column;
-    row-gap: 16px;
-}
 .input {
     border-radius: 8px;
     border: 1px solid #EAEAEA;
-    background: #FFF;
+    background: $bgWhite;
     /* color: #B5B6BC; */
     font-family: 'TT Lakes Medium';
     font-size: 16px;
@@ -85,33 +88,37 @@
     justify-content: center;
     border: none;
     margin-left: auto;
-}
-.send__text {
-    color: #FFF;
-    text-align: right;
-    font-family: 'TT Lakes Bold';
-    font-size: 12px;
-    line-height: 24px;
-    letter-spacing: -0.15px;
-    text-transform: uppercase;
-}
-.send__arrow {
-    width: 27.429px;
-    height: 24px;
-    background-image: url('../img/goside.svg');
-    background-repeat: no-repeat;
-    margin-left: 2px;
+
+    &__text {
+      color: #FFF;
+      text-align: right;
+      font-family: 'TT Lakes Bold';
+      font-size: 12px;
+      line-height: 24px;
+      letter-spacing: -0.15px;
+      text-transform: uppercase;
+    }
+
+    &__arrow {
+      width: 27.429px;
+      height: 24px;
+      background-image: url('../img/goside.svg');
+      background-repeat: no-repeat;
+      margin-left: 2px;
+    }
 }
 @media (min-width: 1440px) {
+
     .wrapper-request {
         opacity: 0.9605;
-        background: #FFF;
+        background: $bgWhite;
     }
     .request {
         width: 440px;
-    }
-    .request__header {
-        position: absolute;
+
+        &__header {
+          position: absolute;
+        }
     }
     .icon__close {
         margin-left: -89px;

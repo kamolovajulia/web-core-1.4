@@ -1,4 +1,5 @@
 $bgColor: #F8F8F8;
+$bgWhite: #FFF;
 $text: #1B1C21;
 
 @font-face {
@@ -37,8 +38,8 @@ body {
   color: $text;
 }
 
-@import 'index.css';
-@import 'part3.css';
-@import 'menu-style.css';
-@import 'feedback.css';
-@import 'requestACall.css';
+@import 'index.scss';
+@import 'part3.scss';
+@import 'menu-style.scss';
+@import 'feedback.scss';
+@import 'requestACall.scss';

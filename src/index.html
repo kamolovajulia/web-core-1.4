@@ -8,13 +8,13 @@
 </head>
 <body class="body">
     <!-- Aside-menu begins -->
-    <section class="aside-container ">
+    <section class="aside-container">
     <div class="container aside-body__container aside-body aside-body--opacity0">
         <div class="wrapper">
             <div class="aside-header wrapper__header">
-                <a href="#" class="icon icon_close aside-header__icon"></a>
+                <a href="#" class="icon icon__close-menu aside-header__icon"></a>
                 <img src="img/logo.svg" alt="CPS logo" class="aside-header__logo">
-                <a href="#" class="icon icon_search aside-header__icon"></a>
+                <a href="#" class="icon icon__search aside-header__icon"></a>
             </div>
             <ul class="aside-menu wrapper__menu">
                 <li class="aside-menu__item aside-menu__current-item--medium"><a href="#" class="aside-menu__link">Ремонт техники</a></li>
@@ -28,8 +28,8 @@
             </ul>
             <div class="contacts wrapper__footer">
                 <div class="sprites contacts__sprites">
-                    <a href="#" class="icon icon__call sprites__icon" data-toggle-id="requestCall" ></a>
-                    <a href="#" class="icon icon__chat sprites__icon" data-toggle-id="feedbackCall"></a>
+                    <a href="#" class="icon icon__call sprites__icon"></a>
+                    <a href="#" class="icon icon__chat sprites__icon"></a>
                     <a href="#" class="icon icon__profile sprites__icon"></a>
                 </div>
                 <div class="mailto contacts__mailto">
@@ -56,8 +56,8 @@
                 <a href="#" class="icon header__icon icon__burger" data-open="false"></a>
                 <div class="header__space icon--hidden"></div>
                 <img src="img/logo.svg" alt="CPS logo" class="header__logo">
-                <a href="#" class="icon header__icon icon__call icon--hidden" data-toggle-id="requestCall"></a>
-                <a href="#" class="icon header__icon icon__chat icon--hidden" data-toggle-id="feedbackCall"></a>
+                <a href="#" class="icon header__icon icon__call icon--hidden"></a>
+                <a href="#" class="icon header__icon icon__chat icon--hidden"></a>
                 <a href="#" class="icon header__icon icon__profile icon--hidden"></a>
                 <div class="header__space"></div>
                 <a href="#" class="icon header__icon icon__repair"></a>
@@ -93,7 +93,7 @@
         </div>
             <section class="body__container0 brands">
                 <div class="header brands__header">
-                    <h1 class="header__title title-h2">Ремонт техники различных брендов</h1>
+                    <h3 class="header__title title-h2">Ремонт техники различных брендов</h3>
                 </div>
                 <div class="brands__body">
                     <div class="swiper-container brands__container">
@@ -120,7 +120,7 @@
 
             <section class="body__container1 repair">
                 <div class="header repair__header">
-                    <h1 class="header__title title-h2">Ремонт различных видов техники</h1>
+                    <h3 class="header__title title-h2">Ремонт различных видов техники</h3>
                 </div>
                 <div class="repair__body">
                     <div class="swiper-container repair__container">
@@ -144,7 +144,7 @@
             </section>
                 <section class="body__container2 price">
                     <div class="header price__header">
-                        <h1 class="header__title title-h2">Цена на услуги</h1>
+                        <h3 class="header__title title-h2">Цена на услуги</h3>
                     </div>
                     <div class="swiper-container price__container">
                         <div class="swiper-wrapper price__swiper-wrapper">
@@ -246,12 +246,12 @@
                     <p class="footer__text">Информация, размещенная на данной странице, не является публичной офертой</p>
                 </footer>
 </div>
-<section class="wrapper-feedback hidden" id="feedbackCall" data-attr="false">
+<section class="wrapper-feedback hidden">
     <aside class="feedback">
         <div class="feedback__header">
-            <a href="#" class="icon icon__close" data-toggle-id="close"></a>
+            <a href="#" class="icon icon__close"></a>
         </div>
-        <h1 class="feedback__title">Обратная связь</h1>
+        <h2 class="feedback__title">Обратная связь</h2>
         <form class="feedback__form">
             <input class="input" type="text" placeholder="Имя" required>
             <input class="input" type="tel" placeholder="Телефон" required>
@@ -262,12 +262,12 @@
         </form>
     </aside>
 </section>
-<section class="wrapper-request hidden" id="requestCall" data-attr="false">
+<section class="wrapper-request hidden">
     <aside class="request">
         <div class="request__header">
-            <a href="#" class="icon icon__close" data-toggle-id="close"></a>
+            <a href="#" class="icon icon__close"></a>
         </div>
-        <h1 class="request__title">Заказать звонок</h1>
+        <h2 class="request__title">Заказать звонок</h2>
         <form class="request__form">
             <input class="input" type="tel" placeholder="Телефон" required>
             <p class="agreement">Нажимая “отправить”, вы даете согласие на <a class="link">обработку персональных данных</a> и соглашаетесь с нашей <a class="link">политикой конфиденциальности</a></p>
@@ -275,7 +275,6 @@
         </form>
     </aside>
 </section>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script src="js/index.js"></script>
     </body>
 </html>

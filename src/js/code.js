@@ -1,51 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
 
-    const brandsBtn = document.querySelector('.brands__show-all');
-    const brandsShowAll = document.querySelector('.brands__show-all__link');
-    const brandsArrow = document.querySelector('.brands__arrow');
-    const brandsWrapper = document.querySelector('.brands__swiper-wrapper');
-
-    //Раскрытие всех элементов раздела "Ремонт техники различных брендов"
-    brandsBtn.addEventListener('click', function () {
-        if (brandsBtn.dataset.allBrands=='false') {
-            brandsWrapper.classList.remove('brands__swiper-wrapper--fixes-size');
-            brandsWrapper.classList.add('swiper-wrapper_full-height');
-            brandsArrow.classList.add('transform');
-            brandsBtn.dataset.allBrands='true';
-            brandsShowAll.textContent='Скрыть';
-        } else {
-            brandsWrapper.classList.add('brands__swiper-wrapper--fixes-size');
-            brandsWrapper.classList.remove('swiper-wrapper_full-height');
-            brandsArrow.classList.remove('transform');
-            brandsBtn.dataset.allBrands='false';
-            brandsShowAll.textContent='Показать все';
-        };
-    });
-
-    const repairBtn = document.querySelector('.repair__show-all');
-    const repairShowAll = document.querySelector('.repair__show-all__link');
-    const repairArrow = document.querySelector('.repair__arrow');
-    const repairWrapper = document.querySelector('.repair__swiper-wrapper');
-
-    //Раскрытие всех элементов раздела "Ремонт различных видов техники"
-    repairBtn.addEventListener('click', function () {
-        if (repairBtn.dataset.allRepair=='false') {
-            repairWrapper.classList.remove('repair__swiper-wrapper--fixes-size');
-            repairWrapper.classList.add('swiper-wrapper_full-height');
-            repairArrow.classList.add('transform');
-            repairBtn.dataset.allRepair='true';
-            repairShowAll.textContent='Скрыть';
-        } else {
-            repairWrapper.classList.add('repair__swiper-wrapper--fixes-size');
-            repairWrapper.classList.remove('swiper-wrapper_full-height');
-            repairArrow.classList.remove('transform');
-            repairBtn.dataset.allRepair='false';
-            repairShowAll.textContent='Показать все';
-        };
-    });
-
     const burger = document.querySelector('.icon__burger');
-    const closeBtn = document.querySelector('.icon__close');
+    const closeBtn = document.querySelector('.icon__close-menu');
     const asideMenu = document.querySelector('.aside-body');
     const bodyContent = document.querySelector('.body__content');
 
@@ -62,6 +18,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
             asideMenu.classList.add('aside-body--opacity1');
             hideBody();
             burger.dataset.open = 'true';
+            if (window.innerWidth>=768) {
+              asideContainer.classList.add('aside-container-1000');
+            }
         };
     });
 
@@ -73,53 +32,65 @@ document.addEventListener("DOMContentLoaded", (event) => {
     function closeMenu() {
         asideMenu.classList.add('aside-body--opacity0');
         asideMenu.classList.remove('aside-body--opacity1');
-        bodyContent.classList.remove('body__content--opacity0');
-        bodyContent.classList.remove('body__content--fixed');
         burger.dataset.open = 'false';
+    }
+
+    function openBody() {
+      bodyContent.classList.remove('body__content--opacity0');
+      bodyContent.classList.remove('body__content--fixed');
     }
 
     //Закрытие меню с помощью кнопки
     closeBtn.addEventListener('click', function() {
-        if ((feedbackContent.dataset.attr=='false')&&(requestContent.dataset.attr=='false')) {
             closeMenu();
-        }
+            if (window.innerWidth>=768) {
+              asideContainer.classList.remove('aside-container-1000');
+            }
+            if (requestContent.classList.contains('hidden') && feedbackContent.classList.contains('hidden')) {
+              openBody();
+            }
+        // }
     });
+
     //Скрыть боковое меню и основной контент при 1440px
     function hideBodyAndMenu() {
       bodyContent.classList.add('body__content--fixed320');
       asideContainer.classList.add('menu-opacity0');
       asideContainer.classList.add('body__content--fixed');
-  }
+    }
+
+    const call = document.querySelectorAll('.icon__call');
+    const chat = document.querySelectorAll('.icon__chat');
+
     //Открытие окон обратной связи и заказа звонка
-    document.addEventListener('click', function(event) {
-        let id = event.target.dataset.toggleId;
-        if (!id) return;
-        if (id=='feedbackCall') {
-            let elem = document.getElementById('feedbackCall');
-            elem.classList.remove('hidden');
-            elem.dataset.attr='true';
+    for (i=0; i<call.length; i++) {
+        call[i].addEventListener('click', function() {
+            requestContent.classList.remove('hidden');
             bodyContent.classList.add('body__content--opacity0');
-            // hideBody();
-            if (window.innerWidth>=1440) {
-                // asideMenu.classList.add('menu-opacity0');
-                hideBodyAndMenu();
-            } else {
-              bodyContent.classList.add('body__content--fixed');
-            };
-        };
-        if (id=='requestCall') {
-            let elem = document.getElementById('requestCall');
-            elem.classList.remove('hidden');
-            elem.dataset.attr='true';
-            bodyContent.classList.add('body__content--opacity0');
-            // hideBody();
+            if (asideMenu.classList.contains('aside-body--opacity1')) {
+              asideContainer.classList.add('aside-container--absolute');
+            }
             if(window.innerWidth>=1440) {
               hideBodyAndMenu();
             } else {
               bodyContent.classList.add('body__content--fixed');
             };
-        };
     });
+    }
+    for (i=0; i<chat.length; i++) {
+      chat[i].addEventListener('click', function() {
+        feedbackContent.classList.remove('hidden');
+        bodyContent.classList.add('body__content--opacity0');
+        if (asideMenu.classList.contains('aside-body--opacity1')) {
+          asideContainer.classList.add('aside-container--absolute');
+        }
+        if (window.innerWidth>=1440) {
+            hideBodyAndMenu();
+        } else {
+          bodyContent.classList.add('body__content--fixed');
+        };
+      });
+    }
 
     //Показать боковое меню и основной контент
     function openBodyAndMenu() {
@@ -128,77 +99,86 @@ document.addEventListener("DOMContentLoaded", (event) => {
       asideContainer.classList.remove('body__content--fixed');
     }
 
+    const close = document.querySelectorAll('.icon__close');
+
+    function closeFeedback() {
+      feedbackContent.classList.add('hidden');
+    }
+
+    function closeRequest() {
+      requestContent.classList.add('hidden');
+    }
+
     //Закрытие окон обратной связи и заказа звонка
-    document.addEventListener('click', function(event) {
-        let id = event.target.dataset.toggleId;
-        if (!id) return;
-        if (id=='close') {
+    for (i=0; i<chat.length; i++) {
+      close[i].addEventListener('click', function() {
+        bodyContent.classList.remove('body__content--opacity0');
             if(window.innerWidth>=1440) {
                 openBodyAndMenu();
-                if (feedbackContent.dataset.attr=='true') {
-                    let elem = document.getElementById('feedbackCall');
-                    elem.classList.add('hidden');
-                    elem.dataset.attr='false';
+                if (!feedbackContent.classList.contains('hidden')) {
+                  closeFeedback();
                 }
-                if (requestContent.dataset.attr=='true') {
-                    let elem = document.getElementById('requestCall');
-                    elem.classList.add('hidden');
-                    elem.dataset.attr='false';
+                if (!requestContent.classList.contains('hidden')) {
+                  closeRequest();
                 }
-                bodyContent.classList.remove('body__content--opacity0');
-            } else {
-                if (feedbackContent.dataset.attr=='true') {
-                    let elem = document.getElementById('feedbackCall');
-                    elem.classList.add('hidden');
-                    elem.dataset.attr='false';
+
+            }
+            else {
+              bodyContent.classList.remove('body__content--fixed');
+              if (asideMenu.classList.contains('aside-body--opacity1')) {
+                asideContainer.classList.remove('aside-container--absolute');
+              }
+                if (!feedbackContent.classList.contains('hidden')) {
+                  closeFeedback();
                 }
-                if (requestContent.dataset.attr=='true') {
-                    let elem = document.getElementById('requestCall');
-                    elem.classList.add('hidden');
-                    elem.dataset.attr='false';
+                if (!requestContent.classList.contains('hidden')) {
+                  closeRequest();
                 }
-                bodyContent.classList.remove('body__content--opacity0');
-                bodyContent.classList.remove('body__content--fixed');
                 if (burger.dataset.open=='true') {
-                    // asideMenu.classList.add('aside-body--opacity1');
                     bodyContent.classList.remove('body__content--opacity1');
                     hideBody();
                 }
             }
-        }
-    });
+        });
+    }
 
     //Закрытие меню при нажатии на заблюренную область
     asideContainer.addEventListener('click', (e) => {
         if ((!asideMenu.contains(e.target))&&(burger.dataset.open =='true')) {
             closeMenu();
+            if (window.innerWidth>=768) {
+              asideContainer.classList.remove('aside-container-1000');
+            }
+            if (requestContent.classList.contains('hidden') && feedbackContent.classList.contains('hidden')) {
+              openBody();
+            }
         }
     });
 
-    //свайпер
-    let swiper = new Swiper(".swiper-container", {
-        slidesPerView: 1.1,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-            400:{
-                slidesPerView:1.5,
-            },
-            500:{
-                slidesPerView:1.8,
-            },
-            600:{
-                slidesPerView:2.3,
-            },
-            700:{
-                slidesPerView:2.5,
-            },
-            768:{
-                slidesPerView:11,
-            },
-        },
+    const Feedback = document.querySelector('.feedback');
+
+    feedbackContent.addEventListener('click', (e) => {
+
+      if ((!Feedback.contains(e.target))&&(!feedbackContent.classList.contains('hidden'))) {
+        closeFeedback();
+        if (asideMenu.classList.contains('aside-body--opacity1')) {
+          asideContainer.classList.remove('aside-container--absolute');
+        }
+        openBody();
+      }
     });
+
+  const request = document.querySelector('.request');
+
+  requestContent.addEventListener('click', (e) => {
+
+    if ((!request.contains(e.target))&&(!requestContent.classList.contains('hidden'))) {
+      closeRequest();
+      if (asideMenu.classList.contains('aside-body--opacity1')) {
+        asideContainer.classList.remove('aside-container--absolute');
+      }
+      openBody();
+    }
+  });
 
 });
